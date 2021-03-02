@@ -1,5 +1,6 @@
 import 'package:best_flutter_ui_templates/fitness_app/models/tabIcon_data.dart';
 import 'package:best_flutter_ui_templates/fitness_app/traning/training_screen.dart';
+import 'package:best_flutter_ui_templates/ripeness/ripeness_main.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fintness_app_theme.dart';
@@ -77,7 +78,11 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
         ),
         BottomBarView(
           tabIconsList: tabIconsList,
-          addClick: () {},
+          addClick: () {
+            Navigator.push(
+              context, MaterialPageRoute(builder: (context) => RipenessMain()),
+            );
+          },
           changeIndex: (int index) {
             if (index == 0) {
               animationController.reverse().then<dynamic>((data) {
